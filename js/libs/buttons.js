@@ -271,7 +271,7 @@ $(document).ready(function () {
 		p=p.highlights;
 		opcoes=[];
 		p.forEach(function(d,i){
-		    opcoes.push(d);
+		    
 		});
 		if(base=='C'){
 			$('#chuvaview').show();
@@ -306,7 +306,7 @@ $(document).ready(function () {
 			   	var p=findP(novodataset,id);
 			    p=p.highlights;
 			    p.forEach(function(d,i){
-			    	opcoes.push(d);
+			    	
 			    });
 			    if(base=='C'){
 					$('#chuvaview').show();
@@ -354,7 +354,7 @@ $(document).ready(function () {
 			    p=p.highlights;
 				opcoes=[];
 				p.forEach(function(d,i){
-				    opcoes.push(d);
+				    
 				});
 				if(base=='C'){
 					$('#chuvaview').show();

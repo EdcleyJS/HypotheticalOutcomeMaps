@@ -120,7 +120,7 @@ function inicioMedia(dados){
     }).addTo(mapMedia);
   if(mesmedia!=undefined){
     infoMedia.update = function (props) {
-      this._div.innerHTML= '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o mês de '+mesmedia+' no período.');
+      this._div.innerHTML= '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for the month of '+mounthEn(mesmediaN)+' in the period.');
     };
   }else{
     infoMedia.update = function (props) {
@@ -232,8 +232,8 @@ function Vis04TutorialFunction(dados){
     }).addTo(mapVis04);
   if(mesmedia!=undefined){
     infoVis04.update = function (props) {
-      this._div.innerHTML= '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o mês de '+mesmedia+' no período.');
-    }
+      this._div.innerHTML= '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for the month of '+mounthEn(mesmediaN)+' in the period.');
+    };
   }else{
     infoVis04.update = function (props) {
       this._div.innerHTML= infoprops(props);

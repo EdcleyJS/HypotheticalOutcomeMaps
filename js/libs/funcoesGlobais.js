@@ -423,73 +423,103 @@ function dotMapPrep(dist){
   });
   return uniqueArray;
 }
+
+function mounthEn(mesmediaN){
+        if(mesmediaN==0){
+          return "Jan";
+        }else if(mesmediaN==1){
+          return "Feb";
+        }else if(mesmediaN==2){
+          return "Mar";
+        }else if(mesmediaN==3){
+          return "Apr";
+        }else if(mesmediaN==4){
+          return "May";
+        }else if(mesmediaN==5){
+          return "Jun";
+        }else if(mesmediaN==6){
+          return "Jul";
+        }else if(mesmediaN==7){
+          return "Aug";
+        }else if(mesmediaN==8){
+          return "Sep";
+        }else if(mesmediaN==9){
+          return "Oct";
+        }else if(mesmediaN==10){
+          return "Nov";
+        }else if(mesmediaN==11){
+          return "Dec";
+        }
+}
+
+
 // PREPARA A INFORMAÇÃO DO MAPA COM BASE NO DATA SET E SE TIVER ALGUM FILTRO DE MES, TRIMESTRE, OU DIA ATIVADO.
 function infoprops(props){
     if(featurename!=undefined){
       if(anoSelecionado!=undefined){
         if(mesSelecionado!=undefined){
-          return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+mesSelecionado+'/'+anoSelecionado+'.');
+          return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+mesSelecionado+'/'+anoSelecionado+'.');
         }else if(trimestreSelecionado!=undefined){
           if(diaSelecionado!=undefined){
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
           }else{
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o '+trimestreSelecionado+'º quarter of '+anoSelecionado+'.');
           }
         }else if(diaSelecionado!=undefined){
-          return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+          return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of '+anoSelecionado+'.');
         }else{
-          return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+anoSelecionado+'.');
+          return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+anoSelecionado+'.');
         }
       }else if(trimestreSelecionado!=undefined){
         if(diaSelecionado!=undefined){
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of'+trimestreSelecionado+'º quarters in the period.');
         }else{
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+trimestreSelecionado+'ºs trimestres no período.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+trimestreSelecionado+' quarters in the period.');
         }
       }else if(mesSelecionado!=undefined){
         if(diaSelecionado!=undefined){
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias dos mês de'+mesSelecionado+' no período.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of the month of'+mesSelecionado+' in the period.');
         }else{
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os mês de '+mesSelecionado+' no período.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for mês de '+mesSelecionado+' in the period.');
         }
       }else if(diaSelecionado!==undefined){
-            return '<h5>Informações com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias dos mês no período.');
+            return '<h5>Information based on '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of the month in the period.');
       }else{
-          return '<h4> Informações com base em '+featurename+'.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores referentes a todo o período.');
+          return '<h4> Information based on '+featurename+'.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores referentes a todo o período.');
       }
     }else{
       if(anoSelecionado!=undefined){
 
         if(mesSelecionado!=undefined){
-          return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+mesSelecionado+'/'+anoSelecionado+'.');
+          return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+mesSelecionado+'/'+anoSelecionado+'.');
         }else if(trimestreSelecionado!=undefined){
           if(diaSelecionado!=undefined){
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
           }else{
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o '+trimestreSelecionado+'º quarter of '+anoSelecionado+'.');
           }
         }else if(diaSelecionado!=undefined){
-          return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+          return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of '+anoSelecionado+'.');
         }else{
-          return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+anoSelecionado+'.');
+          return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para '+anoSelecionado+'.');
         }
 
       }else if(trimestreSelecionado!=undefined){
         if(diaSelecionado!=undefined){
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of'+trimestreSelecionado+'º quarters in the period.');
         }else{
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+trimestreSelecionado+'ºs trimestres no período.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+trimestreSelecionado+' quarters in the period.');
         }
       }else if(mesSelecionado!=undefined){
         if(diaSelecionado!=undefined){
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias dos mês de'+mesSelecionado+' no período.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of the month of'+mesSelecionado+' in the period.');
         }else{
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para o mês de '+mesSelecionado+' no período.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for the month of '+mesSelecionado+' in the period.');
         }
       }else if(diaSelecionado!==undefined){
-            return '<h5>Informações com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores para os '+diaSelecionado+'ºs dias dos mês no período.');
+            return '<h5>Information based on the state of PE Brazil.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for '+diaSelecionado+' days of the month in the period.');
       }else{
-          return '<h4> Informações com base em PE.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Valores referentes a todo o período.');
+          return '<h4> Information based on the state of PE Brazil.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Values for the entire period.');
       }
     }
 }
