@@ -31,7 +31,7 @@ $(document).ready(function () {
 	    else{
 		for (var i = 0; i < sorteados.length; i++) {
 		    if(hops){
-			let myIndex = getRandomInt(0,meses.length-1);
+			let myIndex = getRandomInt(0,sorteados.length-1);
 			mesmedia= sorteados[myIndex];
 			inicioMedia(dataset);
 			Vis04TutorialFunction(dataset);
@@ -45,8 +45,9 @@ $(document).ready(function () {
 	}
 	async function animacaoT(){
 		for (var i = 0; i < sorteados.length; i++) {
-			if(hops){
-				mesmedia= sorteados[i];
+		    if(hops){
+			let myIndex = getRandomInt(0,sorteados.length-1);
+				mesmedia= sorteados[myIndex];
 				if(sorteados[i]=='Jan'){
 					mesmediaN=0;
 				}else if(sorteados[i]=='Fev'){
