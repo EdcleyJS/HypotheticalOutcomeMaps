@@ -1,3 +1,9 @@
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 $(document).ready(function () {
 	var anos=[2016,2017,2018];
 	var trimestre=[1,2,3,4];
@@ -8,17 +14,34 @@ $(document).ready(function () {
 	}
 	sorteados=shuffle(meses);
 	async function animacao(){
+	    if(false){
+		//essa implementação do hops está errada. O hops tem que ser amostras aleatórias não tem nada relacionado com fazer um ciclo aleatório do que vc tem
 		for (var i = 0; i < sorteados.length; i++) {
-			if(hops){
-				mesmedia= sorteados[i];
-				inicioMedia(dataset);
-				Vis04TutorialFunction(dataset);
-			}
-			if(i==(sorteados.length-1)){
-				i=-1;
-			}
-			await sleep(660);
+		    if(hops){
+			mesmedia= sorteados[i];
+			inicioMedia(dataset);
+			Vis04TutorialFunction(dataset);
+		    }
+		    if(i==(sorteados.length-1)){
+			i=-1;
+		    }
+		    await sleep(660);
 		}
+	    }
+	    else{
+		for (var i = 0; i < sorteados.length; i++) {
+		    if(hops){
+			let myIndex = getRandomInt(0,meses.length-1);
+			mesmedia= sorteados[myIndex];
+			inicioMedia(dataset);
+			Vis04TutorialFunction(dataset);
+		    }
+		    if(i==(sorteados.length-1)){
+			i=-1;
+		    }
+		    await sleep(660);
+		}
+	    }
 	}
 	async function animacaoT(){
 		for (var i = 0; i < sorteados.length; i++) {
